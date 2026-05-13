@@ -12,7 +12,7 @@ class LoginController extends GetxController {
 
   final _auth = Get.find<AuthService>();
 
-  static const _requiredPassword = '123456789';
+  static const _requiredPassword = '123230222';
 
   void togglePasswordVisibility() {
     isPasswordVisible.value = !isPasswordVisible.value;

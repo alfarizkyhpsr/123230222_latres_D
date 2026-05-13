@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../core/theme/app_theme.dart';
 import '../../core/controllers/splash_controller.dart';
 
-class SplashPage extends GetView<SplashController> {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    Get.find<SplashController>();
+  }
 
   @override
   Widget build(BuildContext context) {

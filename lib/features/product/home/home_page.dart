@@ -14,6 +14,7 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: AppTheme.background,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             _buildHeader(),
@@ -32,7 +33,8 @@ class HomePage extends GetView<HomeController> {
                   color: AppTheme.primary,
                   child: GridView.builder(
                     padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 0.72,
                       crossAxisSpacing: 12,
@@ -72,9 +74,10 @@ class HomePage extends GetView<HomeController> {
               children: [
                 const Text(
                   'Halo,',
-                  style: TextStyle(fontSize: 14, color: AppTheme.textSecondary),
+                  style:
+                      TextStyle(fontSize: 14, color: AppTheme.textSecondary),
                 ),
-                Obx(() => Text(
+                Text(
                   controller.username,
                   style: const TextStyle(
                     fontSize: 20,
@@ -82,7 +85,7 @@ class HomePage extends GetView<HomeController> {
                     color: AppTheme.textPrimary,
                   ),
                   overflow: TextOverflow.ellipsis,
-                )),
+                ),
               ],
             ),
           ),
@@ -156,7 +159,8 @@ class _ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(16)),
               child: AspectRatio(
                 aspectRatio: 1.1,
                 child: Image.network(
@@ -182,51 +186,53 @@ class _ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.title,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppTheme.textPrimary,
-                      height: 1.4,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      product.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppTheme.textPrimary,
+                        height: 1.4,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 6),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '\$${product.price.toStringAsFixed(0)}',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: AppTheme.primary,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          const Icon(Icons.star_rounded,
-                              color: Colors.amber, size: 14),
-                          const SizedBox(width: 2),
-                          Text(
-                            product.rating.toStringAsFixed(1),
-                            style: const TextStyle(
-                              fontSize: 11,
-                              color: AppTheme.textSecondary,
-                            ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '\$${product.price.toStringAsFixed(0)}',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: AppTheme.primary,
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                        ),
+                        Row(
+                          children: [
+                            const Icon(Icons.star_rounded,
+                                color: Colors.amber, size: 14),
+                            const SizedBox(width: 2),
+                            Text(
+                              product.rating.toStringAsFixed(1),
+                              style: const TextStyle(
+                                fontSize: 11,
+                                color: AppTheme.textSecondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
