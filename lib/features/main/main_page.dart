@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/theme/app_theme.dart';
 import 'main_controller.dart';
 import '../product/home/home_page.dart';
 import '../profile/profile_page.dart';
@@ -24,7 +23,7 @@ class MainPage extends GetView<MainController> {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.06),
+                color: Colors.black.withAlpha(15),
                 blurRadius: 20,
                 offset: const Offset(0, -4),
               ),

@@ -27,7 +27,7 @@ class DetailPage extends GetView<DetailController> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: AppTheme.primary.withOpacity(0.1),
+                          color: AppTheme.primary.withAlpha(26),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
@@ -87,7 +87,7 @@ class DetailPage extends GetView<DetailController> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 3),
                           decoration: BoxDecoration(
-                            color: AppTheme.secondary.withOpacity(0.15),
+                            color: AppTheme.secondary.withAlpha(38),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
@@ -160,7 +160,7 @@ class DetailPage extends GetView<DetailController> {
         child: Container(
           margin: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.9),
+            color: Colors.white.withAlpha(230),
             shape: BoxShape.circle,
           ),
           child: const Icon(Icons.arrow_back_ios_new_rounded,
@@ -274,7 +274,7 @@ class _QtyButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: enabled
               ? AppTheme.primary
-              : AppTheme.primary.withOpacity(0.2),
+              : AppTheme.primary.withAlpha(51),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(icon, color: Colors.white, size: 20),

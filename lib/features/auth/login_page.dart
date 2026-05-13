@@ -36,7 +36,7 @@ class LoginPage extends GetView<LoginController> {
                         borderRadius: BorderRadius.circular(24),
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.primary.withOpacity(0.3),
+                            color: AppTheme.primary.withAlpha(77),
                             blurRadius: 20,
                             offset: const Offset(0, 8),
                           ),
@@ -74,7 +74,7 @@ class LoginPage extends GetView<LoginController> {
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.primary.withOpacity(0.08),
+                          color: AppTheme.primary.withAlpha(20),
                           blurRadius: 30,
                           offset: const Offset(0, 10),
                         ),
@@ -121,7 +121,7 @@ class LoginPage extends GetView<LoginController> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppTheme.primary,
                               disabledBackgroundColor:
-                                  AppTheme.primary.withOpacity(0.5),
+                                  AppTheme.primary.withAlpha(128),
                               padding: const EdgeInsets.symmetric(vertical: 16),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -154,7 +154,7 @@ class LoginPage extends GetView<LoginController> {
                     child: Text(
                       'Password menggunakan NIM Anda',
                       style: TextStyle(
-                        color: AppTheme.textSecondary.withOpacity(0.7),
+                        color: AppTheme.textSecondary.withAlpha(179),
                         fontSize: 13,
                       ),
                     ),

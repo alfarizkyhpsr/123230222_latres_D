@@ -148,7 +148,7 @@ class _CartItemCard extends GetView<CartController> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primary.withOpacity(0.06),
+            color: AppTheme.primary.withAlpha(15),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),

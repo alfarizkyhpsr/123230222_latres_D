@@ -92,7 +92,7 @@ class HomePage extends GetView<HomeController> {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: AppTheme.primary.withOpacity(0.1),
+                color: AppTheme.primary.withAlpha(26),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(
@@ -146,7 +146,7 @@ class _ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.primary.withOpacity(0.07),
+              color: AppTheme.primary.withAlpha(18),
               blurRadius: 16,
               offset: const Offset(0, 4),
             ),

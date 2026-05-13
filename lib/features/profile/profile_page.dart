@@ -59,7 +59,7 @@ class ProfilePage extends GetView<ProfileController> {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primary.withOpacity(0.3),
+            color: AppTheme.primary.withAlpha(77),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -89,7 +89,7 @@ class ProfilePage extends GetView<ProfileController> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primary.withOpacity(0.07),
+            color: AppTheme.primary.withAlpha(18),
             blurRadius: 20,
             offset: const Offset(0, 6),
           ),
@@ -138,15 +138,15 @@ class ProfilePage extends GetView<ProfileController> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primary.withOpacity(0.07),
+            color: AppTheme.primary.withAlpha(18),
             blurRadius: 20,
             offset: const Offset(0, 6),
           ),
         ],
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             'Tentang Saya',
             style: TextStyle(
@@ -217,7 +217,7 @@ class _InfoRow extends StatelessWidget {
           width: 36,
           height: 36,
           decoration: BoxDecoration(
-            color: AppTheme.primary.withOpacity(0.1),
+            color: AppTheme.primary.withAlpha(26),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(icon, color: AppTheme.primary, size: 18),
