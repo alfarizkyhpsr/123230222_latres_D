@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import 'core/theme/app_theme.dart';
+import 'core/routes/app_routes.dart';
+import 'core/routes/app_pages.dart';
+import 'data/models/cart_item_model.dart';
+import 'data/services/auth_service.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(CartItemModelAdapter());
+  await Hive.openBox<CartItemModel>('cart');
+
+  await Get.putAsync(() => AuthService().init());
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Toko Online',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      initialRoute: AppRoutes.splash,
+      getPages: AppPages.pages,
+    );
+  }
+}
